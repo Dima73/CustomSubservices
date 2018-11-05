@@ -18,6 +18,7 @@ class SubservicesQuickzapXML(SubservicesQuickzap):
 		SubservicesQuickzap.__init__(self, session, subservices)
 
 		self.subservices = subservices
+		self.n = None
 		if self.subservices is not None:
 			self.n = len(subservices)
 		self.service = self.session.nav.getCurrentlyPlayingServiceReference()
