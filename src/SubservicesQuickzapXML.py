@@ -71,10 +71,10 @@ class SubservicesQuickzapXML(SubservicesQuickzap):
 			idx = 0
 			while idx < n:
 				i = self.subservices[idx]
-				tlist.append((i.getName(), idx, i.getDisplayString()))
+				tlist.append((i.getDisplayString(), idx))
 				idx += 1
 		keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "green", "yellow"] + [""] * n
-		self.session.openWithCallback(self.subserviceSelected, ChoiceBox, title=_("Please select a subservice..."), list = tlist, selection = self.currentlyPlayingSubservice, keys = keys, windowTitle=_("Subservices") + " XML")
+		self.session.openWithCallback(self.subserviceSelected, ChoiceBox, title=_("Please select a subservice..."), list=tlist, selection=self.currentlyPlayingSubservice, keys=keys, windowTitle=_("Subservices") + " XML")
 
 	def subserviceSelected(self, service):
 		if service is not None:
