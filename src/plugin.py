@@ -250,7 +250,7 @@ def readChannelsFromXml():
 	return subserviceGroups
 
 def getPossibleSubservicesForCurrentChannel(self, currentRef, subserviceGroups):
-	possibleSubservices =[]
+	possibleSubservices = []
 	actualSubserviceGroup = None
 	currentRefStr = currentRef.toString()
 	for subserviceGroup in subserviceGroups:

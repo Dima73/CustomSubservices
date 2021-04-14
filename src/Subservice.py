@@ -75,7 +75,7 @@ class Subservice(object):
 					if "time" in parts:
 						displayLength = displayLength - 16
 					if len(self.__currentShowName) > displayLength:
-						displayString += self.__currentShowName[:displayLength-4]
+						displayString += self.__currentShowName[:displayLength - 4]
 						displayString += "... "
 					else:
 						displayString += self.__currentShowName
@@ -86,9 +86,9 @@ class Subservice(object):
 					displayString += ") "
 					
 			if len(displayString) < 1 or displayString == "":
-				displayString = self.__currentShowName[:displayLength-19] + "... " + self.__currentShowTime
+				displayString = self.__currentShowName[:displayLength - 19] + "... " + self.__currentShowTime
 		else:
-			displayString = self.__currentShowName[:displayLength-19] + "... " + self.__currentShowTime
+			displayString = self.__currentShowName[:displayLength - 19] + "... " + self.__currentShowTime
 
 		return displayString
 

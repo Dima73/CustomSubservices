@@ -90,5 +90,5 @@ class SubservicesQuickzapXML(SubservicesQuickzap):
 			self.session.nav.stopService()
 			self.session.nav.playService(newservice, checkParentalControl=False, adjust=False)
 			self.currentlyPlayingSubservice = number
-			self.currentSubserviceNumberLabel.setText(str(number+1))
+			self.currentSubserviceNumberLabel.setText(str(number + 1))
 			self.doShow()
