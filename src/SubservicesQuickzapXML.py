@@ -12,6 +12,7 @@ from Screens.SubservicesQuickzap import SubservicesQuickzap
 
 from enigma import eTimer, eServiceReference
 
+
 class SubservicesQuickzapXML(SubservicesQuickzap):
 
 	def __init__(self, session, subservices):

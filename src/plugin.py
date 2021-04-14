@@ -24,6 +24,7 @@ XML_PATH = "/etc/enigma2/subservices.xml"
 
 #change/add methods of InfoBarSubserviceSelection
 
+
 def checkSubservicesAvail(self):
 	#check traditional subservices first
 	service = self.session.nav.getCurrentService()
@@ -34,7 +35,9 @@ def checkSubservicesAvail(self):
 		if not subservices or len(subservices) == 0:
 			self["SubserviceQuickzapAction"].setEnabled(False)
 
+
 InfoBarSubserviceSelection.checkSubservicesAvail = checkSubservicesAvail
+
 
 def changeSubservice(self, direction):
 	serviceRef = self.session.nav.getCurrentlyPlayingServiceReference()
@@ -89,7 +92,9 @@ def changeSubservice(self, direction):
 					del service
 					self.playSubservice(newservice)
 
+
 InfoBarSubserviceSelection.changeSubservice = changeSubservice
+
 
 def subserviceSelection(self):
 	serviceRef = self.session.nav.getCurrentlyPlayingServiceReference()
@@ -156,7 +161,9 @@ def subserviceSelection(self):
 
 			self.session.openWithCallback(self.subserviceSelected, ChoiceBox, title=_("Please select a sub service..."), list=tlist, selection=selection, keys=keys, skin_name="SubserviceSelection")
 
+
 InfoBarSubserviceSelection.subserviceSelection = subserviceSelection
+
 
 def subserviceSelected(self, service):
 	#check traditional subservices first and call old method
@@ -181,7 +188,9 @@ def subserviceSelected(self, service):
 			else:
 				self.playSubservice(service[1])
 
+
 InfoBarSubserviceSelection.subserviceSelected = subserviceSelected
+
 
 def addSubserviceToBouquetCallback(self, service):
 	if service and len(service) > 1:
@@ -197,7 +206,9 @@ def addSubserviceToBouquetCallback(self, service):
 				self.addSubserviceToBouquet(self.bouquets[0][1])
 				self.session.open(MessageBox, _("Service has been added to the favourites."), MessageBox.TYPE_INFO, timeout=5)
 
+
 InfoBarSubserviceSelection.addSubserviceToBouquetCallback = addSubserviceToBouquetCallback
+
 
 def addSubserviceToBouquet(self, dest):
 	if isinstance(self.selectedSubservice[1], Subservice):
@@ -210,7 +221,9 @@ def addSubserviceToBouquet(self, dest):
 	else:
 		del self.selectedSubservice
 
+
 InfoBarSubserviceSelection.addSubserviceToBouquet = addSubserviceToBouquet
+
 
 def getAvailableSubservices(self, currentRef):
 	#Read channels and groups from xml config file
@@ -225,7 +238,9 @@ def getAvailableSubservices(self, currentRef):
 	del possibleSubservices
 	return activeSubservices
 
+
 InfoBarSubserviceSelection.getAvailableSubservices = getAvailableSubservices
+
 
 def readChannelsFromXml():
 	subserviceGroups = []
@@ -249,6 +264,7 @@ def readChannelsFromXml():
 		del subserviceGroups[:]
 	return subserviceGroups
 
+
 def getPossibleSubservicesForCurrentChannel(self, currentRef, subserviceGroups):
 	possibleSubservices = []
 	actualSubserviceGroup = None
@@ -262,7 +278,9 @@ def getPossibleSubservicesForCurrentChannel(self, currentRef, subserviceGroups):
 		possibleSubservices = actualSubserviceGroup.getSubservices()
 	return possibleSubservices
 
+
 InfoBarSubserviceSelection.getPossibleSubservicesForCurrentChannel = getPossibleSubservicesForCurrentChannel
+
 
 def getActiveSubservicesForCurrentChannel(self, possibleSubservices):
 	activeSubservices = []
@@ -299,6 +317,7 @@ def getActiveSubservicesForCurrentChannel(self, possibleSubservices):
 			activeSubservices.append(subservice)
 	return activeSubservices
 
+
 InfoBarSubserviceSelection.getActiveSubservicesForCurrentChannel = getActiveSubservicesForCurrentChannel
 
 ### modified Service.getBoolean to activate/deactivate infobar subservices icon ######
@@ -322,7 +341,9 @@ def getBoolean(self):
 	else:
 		return baseServiceInfo_getBoolean(self)
 
+
 baseServiceInfo_getBoolean = None
+
 
 def sessionstart(session, **kwargs):
 	global baseServiceInfo_getBoolean
