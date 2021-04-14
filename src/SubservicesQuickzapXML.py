@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 from Screens.Screen import Screen
 from Components.ActionMap import NumberActionMap
@@ -11,6 +11,7 @@ from Components.ServiceEventTracker import InfoBarBase
 from Screens.SubservicesQuickzap import SubservicesQuickzap
 
 from enigma import eTimer, eServiceReference
+
 
 class SubservicesQuickzapXML(SubservicesQuickzap):
 
@@ -90,5 +91,5 @@ class SubservicesQuickzapXML(SubservicesQuickzap):
 			self.session.nav.stopService()
 			self.session.nav.playService(newservice, checkParentalControl=False, adjust=False)
 			self.currentlyPlayingSubservice = number
-			self.currentSubserviceNumberLabel.setText(str(number+1))
+			self.currentSubserviceNumberLabel.setText(str(number + 1))
 			self.doShow()

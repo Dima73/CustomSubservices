@@ -2,6 +2,7 @@
 
 from Subservice import Subservice
 
+
 class SubserviceGroup(object):
 	__name = ""
 	__subservices = []
