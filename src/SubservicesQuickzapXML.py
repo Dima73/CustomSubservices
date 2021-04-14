@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 from Screens.Screen import Screen
 from Components.ActionMap import NumberActionMap

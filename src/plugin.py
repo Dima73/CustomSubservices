@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from Components.PluginComponent import plugins
 from Components.config import config
 from Components.Converter.ServiceInfo import ServiceInfo

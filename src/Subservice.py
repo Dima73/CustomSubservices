@@ -85,7 +85,7 @@ class Subservice(object):
 					displayString += "("
 					displayString += self.__currentShowTime
 					displayString += ") "
-					
+
 			if len(displayString) < 1 or displayString == "":
 				displayString = self.__currentShowName[:displayLength - 19] + "... " + self.__currentShowTime
 		else:
@@ -105,7 +105,7 @@ class Subservice(object):
 			self.__currentShowName = "?"
 		else:
 			self.__currentShowName = currentShowName
-			
+
 	def setCurrentShowTime(self, currentShowTime):
 		if currentShowTime is None or currentShowTime == "":
 			self.__currentShowTime = "title:time"
