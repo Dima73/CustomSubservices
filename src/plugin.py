@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 from Components.PluginComponent import plugins
 from Components.config import config
 from Components.Converter.ServiceInfo import ServiceInfo
@@ -260,7 +261,7 @@ def readChannelsFromXml():
 					subserviceGroup.addSubservice(Subservice(name, ref, notActiveShowName, displayPattern))
 			subserviceGroups.append(subserviceGroup)
 	except:
-		print "[CustomSubservicesPlugin] XML config file not available or misconfigured!\n"
+		print("[CustomSubservicesPlugin] XML config file not available or misconfigured!\n")
 		del subserviceGroups[:]
 	return subserviceGroups
 
@@ -348,7 +349,7 @@ baseServiceInfo_getBoolean = None
 def sessionstart(session, **kwargs):
 	global baseServiceInfo_getBoolean
 	if baseServiceInfo_getBoolean is None:
-		print "\n[CustomSubservicesPlugin] start\n"
+		print("\n[CustomSubservicesPlugin] start\n")
 		session.subserviceGroups = readChannelsFromXml()
 		ServiceInfo.subserviceGroups = session.subserviceGroups
 		baseServiceInfo_getBoolean = ServiceInfo.getBoolean
