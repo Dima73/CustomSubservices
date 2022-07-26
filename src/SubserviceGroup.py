@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Subservice import Subservice
+from .Subservice import Subservice
 
 
 class SubserviceGroup(object):
